@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="player">
+        <div class="player-main">
+            <div id="player-output" class="player-output"></div>
+            <div class="player-controls">
+                <div>
+                    <div class="player-controls-title">Controls</div>
+                    <div class="player-controls-section">
+                        <button class="btn" onclick="play()">play</button>
+                        <button class="btn" onclick="pause()">pause</button>
+                        <button class="btn" onclick="rewind()">rewind</button>
+                        <button class="btn" onclick="forward()">forward</button>
+                        <button class="btn" onclick="restart()">restart</button>
+                        <button class="btn" onclick="fullScreen()">fullScreen</button>
+                        <button class="btn" onclick="muteToggle(true)">mute</button>
+                        <button class="btn" onclick="muteToggle(false)">un-mute</button>
+                        <button class="btn" onclick="defaultPlay(false)">defaultPlay</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="player-controls-title">Play link</div>
+                    <div class="player-controls-section">
+                        <input id="player-video-input" class="player-controls-input" type="text">
+                        <button class="btn" onclick="addLinkToPlay()">Play link</button>
+                        <button class="btn" onclick="resetPlayerInput()">reset Input</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="player-controls-title">video settings</div>
+                </div>
+                <div>
+                    <div class="player-controls-title">audio settings</div>
+                    <div class="player-controls-section">
+                        <div class="player-audio-control">
+                            <span class="player-audio-display">0</span>
+                            <input id="vol-control" type="range" min="0" max="100" step="1" onchange="volume()"></input>
+                            <span class="player-audio-display">100</span>
+                        </div>
+                        <div id="player-available-tracks" class="player-available-tracks">
+                            <!-- <div class="video-available-tracks">En</div> -->
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="player-controls-title">subtitle settings</div>
+                    <div class="player-controls-section">
+                        <input id="player-subtitle-input" class="player-controls-input" type="text">
+                        <button class="btn" onclick="addSubtitleLinkToPlay()">Add Subtitle link</button>
+                        <button class="btn" onclick="resetPlayerSubtitleInput()">reset Input</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="player-panel">
+            <div class="player-video-details">
+                <div>Current Time:-
+                    <span id="player-video-current-time">0</span>
+                </div>
+                <div>Duration:-
+                    <span id="player-video-duration">0</span>
+                </div>
+            </div>
+            <div class="player-video-playlist">
+                <div class="player-playlist-title">video playlist</div>
+                <div id="player-playlist-container" class="player-playlist-container">
+                    <!-- playlist will be added here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="constants.js" defer></script>
+<script src="/lib/video.js" defer></script>
+<script src="script.js" defer></script>
+<script src="controls.js" defer></script>
+<script src="events.js" defer></script>
+<script src="playlist.js" defer></script>
+<script src="main.js" defer></script>
